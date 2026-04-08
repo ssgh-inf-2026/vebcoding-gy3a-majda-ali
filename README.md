@@ -5,11 +5,12 @@
 Doplňte název aplikace.
 
 ## Členové týmu
-- Jméno 1
-- Jméno 2
+alice
+majda
 
 ## Téma aplikace
-Stručně napište, co bude vaše aplikace dělat.
+**To-Do List** – jednoduchá aplikace pro zapisování úkolů, jejich označení jako splněné a správu seznamu věcí, které máš udělat.
+
 
 ## Cílový uživatel
 Pro koho je aplikace určená?
