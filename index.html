@@ -1,51 +1,26 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moje webová aplikace</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj ToDo List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Moje webová aplikace</h1>
-    <p class="subtitle">Toto je startovní šablona projektu pro GitHub Classroom.</p>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>O projektu</h2>
-      <p>
-        Tuto šablonu si upravte podle svého tématu. Změňte nadpis, texty,
-        vstupy, tlačítka i funkce tak, aby odpovídaly vaší vlastní aplikaci.
-      </p>
-    </section>
+    <div class="container">
+        <h1>Můj Seznam Úkolů</h1>
+        <p>Zadej, co musíš udělat, a klikni na tlačítko.</p>
 
-    <section class="card">
-      <h2>Testovací část</h2>
-      <label for="userInput">Zadej libovolný text:</label>
-      <input type="text" id="userInput" placeholder="Sem napiš text">
+        <input type="text" id="userInput" placeholder="Napiš úkol...">
+        
+        <button id="testButton">Přidat úkol</button>
 
-      <button id="testButton">Vyzkoušet</button>
+        <div id="result">
+            <p>Zatím nemáš žádné úkoly.</p>
+        </div>
+    </div>
 
-      <p id="result">Zde se zobrazí výsledek.</p>
-    </section>
-
-    <section class="card">
-      <h2>Co bude potřeba změnit</h2>
-      <ul>
-        <li>upravte název aplikace,</li>
-        <li>doplňte vlastní obsah,</li>
-        <li>vytvořte vlastní funkci v JavaScriptu,</li>
-        <li>upravte vzhled podle svého projektu.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>Projekt vytvořen v rámci výuky – vibe coding.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
