@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Můj ToDo List</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; padding: 50px; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        h1 { color: #333; }
+        input { width: 80%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; margin-bottom: 10px; }
+        button { padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #218838; }
+        #result { margin-top: 20px; text-align: left; }
+        .ukol-polozka { background: #fff; border-bottom: 1px solid #eee; padding: 10px; margin: 5px 0; display: flex; justify-content: space-between; }
+        .error { color: red; font-weight: bold; }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Můj Seznam Úkolů</h1>
-        <p>Zadej, co musíš udělat, a klikni na tlačítko.</p>
-
-        <input type="text" id="userInput" placeholder="Napiš úkol...">
+        <h1>✅ Moje Úkoly</h1>
         
-        <button id="testButton">Přidat úkol</button>
+        <input type="text" id="userInput" placeholder="Co dnes uděláš?">
+        <button id="testButton">Přidat</button>
 
         <div id="result">
-            <p>Zatím nemáš žádné úkoly.</p>
+            <p style="color: gray; text-align: center;">Tvůj seznam je zatím prázdný.</p>
         </div>
     </div>
 
