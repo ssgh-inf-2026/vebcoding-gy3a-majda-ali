@@ -1,71 +1,177 @@
+/* Globální nastavení */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Poppins', sans-serif; /* Moderní písmo */
+    height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 50px;
+    align-items: center;
+    /* Pěkné gradientní pozadí */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.container {
-    background: white;
+/* Hlavní karta aplikace */
+.main-card {
+    background: rgba(255, 255, 255, 0.95);
+    width: 400px;
+    height: 600px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Aby rohy zůstaly kulaté */
+}
+
+/* Záhlaví aplikace */
+.app-header {
+    background: #1f4d7a;
+    color: white;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 350px;
     text-align: center;
 }
 
-h1 {
-    color: #1f4d7a;
+.app-header h1 {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+.date-str {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
+/* Skupina pro zadávání */
+.input-group {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    background: white;
+    border-bottom: 1px solid #eee;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #1f4d7a;
+#userInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+#userInput:focus {
+    outline: none;
+    border-color: #764ba2;
+}
+
+/* Kulaté plus tlačítko */
+#testButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover {
-    background-color: #163a5c;
+#testButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(118, 75, 162, 0.3);
 }
 
-#result {
-    margin-top: 20px;
-    text-align: left;
-    min-height: 50px;
+/* Kontejnér pro seznam úkolů (roluje) */
+.task-list-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Zapne rolování */
 }
 
+/* Stav, když je seznam prázdný */
+.empty-state {
+    text-align: center;
+    color: #bbb;
+    margin-top: 50px;
+}
+
+.empty-state p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Stylování jednoho úkolu */
 .ukol-polozka {
-    background: #eef4fa;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 0;
-    cursor: pointer;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
 }
 
+.ukol-polozka:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Text úkolu */
+.task-text {
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* Tlačítka u úkolu */
+.task-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.check-btn { color: #2ecc71; }
+.check-btn:hover { color: #27ae60; }
+
+.delete-btn { color: #e74c3c; }
+.delete-btn:hover { color: #c0392b; }
+
+/* Styly pro splněný úkol */
+.ukol-polozka.completed {
+    border-left-color: #2ecc71;
+    opacity: 0.6;
+}
+
+.ukol-polozka.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Error hláška */
 .error-text {
-    color: red;
+    color: #e74c3c;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
