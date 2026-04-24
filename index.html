@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj ToDo List</title>
+    <title>Profi Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>✅ Moje Úkoly</h1>
-        
-        <label for="userInput">Zadej nový úkol:</label>
-        <input type="text" id="userInput" placeholder="Co dnes uděláš?">
-        <button id="testButton">Přidat úkol</button>
+    <div class="app-backdrop">
+        <div class="main-card">
+            
+            <header class="app-header">
+                <h1>Moje Úkoly</h1>
+                <p class="date-str" id="currentDate"></p>
+            </header>
 
-        <div id="result">
-            <p style="color: gray; text-align: center;">Tvůj seznam je zatím prázdný.</p>
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="Přidej nový úkol...">
+                <button id="testButton">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <div id="result" class="task-list-container">
+                <div class="empty-state">
+                    <i class="fas fa-tasks fa-3x"></i>
+                    <p>Zatím žádné úkoly. Odpočiň si!</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
